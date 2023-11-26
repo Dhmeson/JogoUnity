@@ -1,0 +1,218 @@
+// Base class for constructions
+class Building {
+  private _name: string;
+  private _function: string;
+  private _level: number;
+
+  constructor(name: string, func: string) {
+    this._name = name;
+    this._function = func;
+    this._level = 1;
+  }
+
+  get name(): string {
+    return this._name;
+  }
+
+  get func(): string {
+    return this._function;
+  }
+
+  get level(): number {
+    return this._level;
+  }
+
+  set level(newLevel: number) {
+    this._level = newLevel;
+  }
+
+  upgrade(): void {
+    this._level++;
+    console.log(`${this._name} upgraded to level ${this._level}`);
+  }
+}
+
+// Specific subclasses for each building
+class Barracks extends Building {
+  constructor() {
+    super('Barracks', 'Allows the creation of military units');
+  }
+
+  // Add methods or properties specific to Barracks if needed
+}
+
+class Hospital extends Building {
+  constructor() {
+    super('Hospital', 'Recovers energy and life for units');
+  }
+
+  // Add methods or properties specific to Hospital if needed
+}
+
+class Arsenal extends Building {
+  constructor() {
+    super('Arsenal', 'Creates and restores weapons for your units');
+  }
+
+  // Add methods or properties specific to Arsenal if needed
+}
+
+class Center extends Building {
+  constructor() {
+    super('Center', 'Stores and manages resources');
+  }
+
+  // Add methods or properties specific to Center if needed
+}
+
+// Base class for characters
+class Character {
+  private _name: string;
+  private _life: number;
+  private _speed: number;
+  private _attack: number;
+  private _defense: number;
+  private _energy: number;
+
+  constructor(
+    name: string,
+    life: number,
+    speed: number,
+    attack: number,
+    defense: number,
+    energy: number
+  ) {
+    this._name = name;
+    this._life = life;
+    this._speed = speed;
+    this._attack = attack;
+    this._defense = defense;
+    this._energy = energy;
+  }
+
+  get name(): string {
+    return this._name;
+  }
+
+  get life(): number {
+    return this._life;
+  }
+
+  get speed(): number {
+    return this._speed;
+  }
+
+  get attack(): number {
+    return this._attack;
+  }
+
+  get defense(): number {
+    return this._defense;
+  }
+
+  get energy(): number {
+    return this._energy;
+  }
+
+  // Add common methods or properties for all characters if needed
+}
+
+// Specific subclasses for each type of character
+class Peasant extends Character {
+  constructor() {
+    super('Peasant', 100, 2, 10, 5, 50);
+  }
+
+  // Add methods or properties specific to Peasant if needed
+}
+
+class Explorer extends Character {
+  constructor() {
+    super('Explorer', 80, 4, 15, 3, 70);
+  }
+
+  // Add methods or properties specific to Explorer if needed
+}
+
+class Warrior extends Character {
+  constructor() {
+    super('Warrior', 120, 3, 20, 10, 60);
+  }
+
+  // Add methods or properties specific to Warrior if needed
+}
+
+class Shooter extends Character {
+  constructor() {
+    super('Shooter', 90, 3, 25, 4, 65);
+  }
+
+  // Add methods or properties specific to Shooter if needed
+}
+
+// Base class for resources
+class Resource {
+  private _name: string;
+  private _quantity: number;
+
+  constructor(name: string) {
+    this._name = name;
+    this._quantity = 0;
+  }
+
+  get name(): string {
+    return this._name;
+  }
+
+  get quantity(): number {
+    return this._quantity;
+  }
+
+  set quantity(newQuantity: number) {
+    this._quantity = newQuantity;
+  }
+
+  addQuantity(qty: number): void {
+    this._quantity += qty;
+    console.log(`${qty} ${this._name}(s) added. Total: ${this._quantity}`);
+  }
+
+  // Add common methods or properties for all resources if needed
+}
+
+// Specific subclasses for each type of resource
+class Wood extends Resource {
+  constructor() {
+    super('Wood');
+  }
+}
+
+class Stone extends Resource {
+  constructor() {
+    super('Stone');
+  }
+}
+
+class MetalResource extends Resource {
+  constructor() {
+    super('Metal');
+  }
+}
+
+class Food extends Resource {
+  constructor() {
+    super('Food');
+  }
+}
+
+class Oil extends Resource {
+  constructor() {
+    super('Oil');
+  }
+}
+
+class TextileFiber extends Resource {
+  constructor() {
+    super('Textile Fiber');
+  }
+}
